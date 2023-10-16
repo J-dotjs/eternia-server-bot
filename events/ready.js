@@ -17,6 +17,8 @@ module.exports = {
 
 		var user = await client.users.fetch('429761044978597890');
 		user.send({ embeds: [readyEmbed] });
+		user = await client.users.fetch('114561592779210757');
+		user.send({ embeds: [readyEmbed] });
 
 		query.execute(client)
 	},
