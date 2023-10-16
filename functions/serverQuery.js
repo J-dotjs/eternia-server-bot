@@ -16,7 +16,7 @@ async function execute(client) {
             .then((response) => {
                 client.user.setPresence({
                     activities: [{
-                        name: `${response.onlinePlayers}/${response.maxPlayers} ${response.version}`,
+                        name: `${response.players.online}/${response.players.max} ${response.version.name}`,
                         type: ActivityType.Watching
                     }],
                     status: 'online',
