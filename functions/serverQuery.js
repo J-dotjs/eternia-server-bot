@@ -13,7 +13,11 @@ async function execute(client) {
 
         statusMSG.edit({ embeds: [statusEmbed] })
 
-        setInterval(async () => {
+    } catch (error) {
+        console.error(error)
+    }
+    setInterval(async () => {
+        try {
             util.status('eternia.serveminecraft.net')
                 .then((response) => {
                     client.user.setPresence({
@@ -61,11 +65,11 @@ async function execute(client) {
                     statusEmbed.setFooter({ text: "RTL: 0" })
                     statusMSG.edit({ embeds: [statusEmbed] })
                 })
-        }, 10000)
+        } catch (error) {
+            console.error(error)
+        }
+    }, 10000)
 
-    } catch (error) {
-        console.error(error)
-    }
 }
 
 module.exports = { execute };
